@@ -66,7 +66,7 @@ function promptParticipantRadio(participants){
       })
     );
     radioElements.push(
-      e('label', {}, n)
+      e('label', {onClick: () => document.getElementById('radio-button-' + i).click()}, n)
     );
     radioElements.push(e('br'));
   });
