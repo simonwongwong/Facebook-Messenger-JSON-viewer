@@ -1,0 +1,76 @@
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+button {
+    margin-top: 10px;
+    margin-left: 5%;
+}
+body {
+    margin: 0;
+}
+
+p, label {
+    font-family: sans-serif;
+}
+#head {
+    background-color: #3b5998;
+    background-size:100%;
+    color: white;
+    font-size: 15px;
+    padding: 2.5px;
+}
+#file-select {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 5%;
+}
+#chat-display {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+    align-items: right;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#participants-radio {
+    margin-left: 5%
+}
+.message-container {
+    position: relative;
+    overflow:auto;
+
+}
+.bubble-right {
+    font-family: sans-serif;
+    background-color:#0084FF;
+    border-radius: 10px;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    width:45%;
+    float: right;
+}
+.name-right{
+    font-family: sans-serif;
+    color: #484848;
+    text-align: right;
+
+}
+
+.bubble-left {
+    font-family: sans-serif;
+    background-color:#F1F0F0;
+    border-radius: 10px;
+    color: black;
+    text-align: left;
+    padding: 10px;
+    float: left;
+    width: 45%;
+}
+.name-left{
+    font-family: sans-serif;
+    color: #484848;
+    text-align: left;
+
+}
