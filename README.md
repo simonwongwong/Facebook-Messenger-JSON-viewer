@@ -13,6 +13,7 @@ Using this Facebook Messenger JSON viewer, it looks much better:
 ## How to use
 
 Here's a quick demo:
+
 ![demo](demo.gif)
 
 ### Step 1.
