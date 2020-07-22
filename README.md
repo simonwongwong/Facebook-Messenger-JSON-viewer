@@ -5,16 +5,16 @@ Useful if you've deleted Facebook, but downloaded your JSON data.
 **TL;DR** [here's the link to try it out](https://simonwong.io/fb_chat_viewer/)
 
 As raw JSON, it's hard to read and it's in reverse chronological order:
-![raw json](rawjson.png)
+![raw json](img/rawjson.png)
 
 Using this Facebook Messenger JSON viewer, it looks much better:
-![viewer](viewer.png)
+![viewer](img/viewer.png)
 
 ## How to use
 
 Here's a quick demo:
 
-![demo](demo.gif)
+![demo](img/demo.gif)
 
 ### Step 1.
 #### Method 1
