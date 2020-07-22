@@ -20,6 +20,7 @@ function handleSubmit(){
   ReactDOM.render(e(ChatArea), document.querySelector('#chat-area'))
   const domChat = document.querySelector('#chat-display');
   ReactDOM.render(e(ChatBubble, cleanedData.msgs), domChat);
+  addChatTitle();
 }
 
 function readJSON(file) {
@@ -48,6 +49,11 @@ function cleanData(raw) {
   }
 
   return cleaned
+}
+
+function addChatTitle() {
+  const chatTitle = document.querySelector('#chat-title')
+  ReactDOM.render(e('h2', {}, cleanedData.title), chatTitle);
 }
 
 function promptParticipantRadio(participants){
@@ -89,7 +95,8 @@ class ChatBubble extends React.Component {
         e(
           'div', {className: "message-container"}, 
           e('div', {className: "name-right"}, msg.sender_name),
-          e('div', {className: "bubble-right"}, msg.content)
+          e('div', {className: "bubble-right"}, msg.content),
+          e('span', {className: "tooltip-right"}, timeConverter(msg.timestamp_ms))
         )
       );
     } else {
@@ -97,7 +104,8 @@ class ChatBubble extends React.Component {
         e(
           'div', {className: "message-container"}, 
           e('div', {className: "name-left"}, msg.sender_name),
-          e('div', {className: "bubble-left"}, msg.content)
+          e('div', {className: "bubble-left"}, msg.content),
+          e('span', {className: "tooltip-left"}, timeConverter(msg.timestamp_ms))
         )
       );
     }
@@ -110,7 +118,6 @@ class ChatBubble extends React.Component {
   }
 }
 
-
 class ChatArea extends React.Component {
   render() {
     return (
@@ -120,3 +127,15 @@ class ChatArea extends React.Component {
   }
 }
 
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes();
+  var sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds();
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}

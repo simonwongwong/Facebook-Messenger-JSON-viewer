@@ -9,6 +9,10 @@ Using this Facebook Messenger JSON viewer, it looks much better:
 ![viewer](viewer.png)
 
 ## How to use
+
+Here's a quick demo:
+![demo](demo.gif)
+
 ### Step 1.
 #### Method 1
 I have this tool [hosted on my website](https://simonwong.io/fb_chat_viewer/). You can select your JSON files and all the data will be processed client-side so you don't have to worry about me reading your chats 😁
@@ -28,7 +32,7 @@ Voilà, your chats can now be easily read.
 ## Ideas / TODO
 * Do some advanced searching/filtering on the chat data in JSON format using my [Facebook Messenger tool](https://github.com/simonwongwong/Facebook-Messenger-Statistics/) and then view the messages using this viewer
 * Add a slider or calendar picker to filter dates in the chat (not supported by Facebook Messenger unless you want to spend hours scrolling and loading).
-* Add tooltip to show timestamps of messages
+* ~~Add tooltip to show timestamps of messages~~
 * Functionality for viewing images/files sent in chat
 
 ## Bugs
