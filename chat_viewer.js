@@ -88,14 +88,22 @@ function radioClick(name) {
   console.log(`Setting ${name} as blue bubble`);
 }
 
+function fixEncoding(txt) {
+  // https://codegolf.stackexchange.com/questions/230855/fix-facebook-exported-json
+  if( txt !== undefined )
+    return new TextDecoder().decode(new Uint8Array(txt.split('').map(r=>r.charCodeAt())));
+  else
+    return '';
+}
+
 class ChatBubble extends React.Component {
   generateBubbles(msg) {
     if (msg.sender_name == myName) {
       return (
         e(
           'div', {className: "message-container"}, 
-          e('div', {className: "name-right"}, msg.sender_name),
-          e('div', {className: "bubble-right"}, msg.content),
+          e('div', {className: "name-right"}, fixEncoding(msg.sender_name)),
+          e('div', {className: "bubble-right"}, fixEncoding(msg.content)),
           e('span', {className: "tooltip-right"}, timeConverter(msg.timestamp_ms))
         )
       );
@@ -103,8 +111,8 @@ class ChatBubble extends React.Component {
       return (
         e(
           'div', {className: "message-container"}, 
-          e('div', {className: "name-left"}, msg.sender_name),
-          e('div', {className: "bubble-left"}, msg.content),
+          e('div', {className: "name-left"}, fixEncoding(msg.sender_name)),
+          e('div', {className: "bubble-left"}, fixEncoding(msg.content)),
           e('span', {className: "tooltip-left"}, timeConverter(msg.timestamp_ms))
         )
       );
